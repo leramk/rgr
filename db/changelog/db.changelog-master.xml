@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="OlegChichkatka">
+        <createTable tableName="skills">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="skill_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="OlegChichkatka">
+        <addColumn tableName="skills">
+            <column name="difficulty_level" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="3" author="OlegChichkatka">
+        <addColumn tableName="skills">
+            <column name="skill_level" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
+    
+
+</databaseChangeLog>
